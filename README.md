@@ -10,42 +10,28 @@ Generates HTML for creating and modifying [json schemas](http://json-schema.org)
 
 2. Include JSON Schema Editor
 
-  - Using npm: 
-  
+  - Using npm:
+
   ```sh
   npm install json-schema-editor
   ```
-  
+
   ```javascript
-  var JSONSchemaEditor = require('json-schema-editor');
-  ```
-  
-  - Old-fashioned style:
-  
-  ```html
-  <script src="node_modules/dist/jsonschemaeditor.js"></script>
+  import JSONSchemaEditor from 'json-schema-editor';
   ```
 
-3. Add an element to your page to contain the editor
-
-```html
-<div id="container"></div>
-```
-
-4. Initialize the component
+3. Initialize the component
 
 ```javascript
-var element = document.getElementById('container');
-var editor = new JSONSchemaEditor(element, {});
-editor.setValue(product);
+render() {
+  return (
+    <JSONSchemaEditor
+      data={{}}
+      onChange={console.log}
+    />
+  );
+}
 ```
-
-5. Get the value (generally after the user presses a button e.g. save)
-
-```javascript
-editor.getValue();
-```
-
 
 ## Example
 -------------
